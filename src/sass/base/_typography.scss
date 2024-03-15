@@ -1,0 +1,22 @@
+@import "../abstracts/variables";
+
+body {
+  font-family: $body-font;
+  font-weight: $fw-regular;
+  line-height: $lh-body;
+  font-size: $fz-body;
+
+  @media #{$media-laptop} {
+
+  }
+}
+
+.title {
+  font-size: $fz-header-1;
+  font-weight: $fw-regular;
+  line-height: $lh-header-1;
+}
+
+.subtitle {
+  font-weight: $fw-semi-bold;
+}

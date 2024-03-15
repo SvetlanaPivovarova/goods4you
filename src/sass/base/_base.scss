@@ -1,0 +1,16 @@
+@import "../abstracts/variables";
+
+html, body {
+  height: 100%;
+  font-family: $body-font;
+}
+
+#root {
+  display:flex;
+  flex-direction:column;
+  position: relative;
+  background-color: $grey-100;
+  min-width: 320px;
+  max-width: 1440px;
+  margin: 0 auto;
+}

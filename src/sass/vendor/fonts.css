@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'Jost';
+    font-style:  normal;
+    font-weight: 400;
+    font-stretch: normal;
+    src: url("fonts/Jost-Regular.ttf") format("truetype");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Jost';
+    font-style:  normal;
+    font-weight: 600;
+    font-stretch: normal;
+    src: url("fonts/Jost-SemiBold.ttf") format("truetype");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Jost';
+    font-style:  normal;
+    font-weight: 700;
+    font-stretch: normal;
+    src: url("fonts/Jost-Bold.ttf") format("truetype");
+    font-display: swap;
+}
+

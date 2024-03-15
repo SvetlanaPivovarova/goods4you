@@ -1,0 +1,38 @@
+@import "../abstracts/variables";
+
+.cover {
+  max-height: 455px;
+  background: $rich-purple-blue;
+  position: relative;
+  padding: 94px 130px 90px;
+  color: $white;
+
+  &::before {
+    content: "Goods4you";
+    display: block;
+    font-size: 200px;
+    min-height: 290px;
+    font-weight: $fw-bold;
+    color: rgba(255, 255, 255, .12);
+    position: absolute;
+    bottom: -96px;
+    left: 162px
+  }
+
+  &__title {
+    max-width: 580px;
+    margin-bottom: 40px;
+
+    .title {
+      margin-bottom: 20px;
+    }
+
+    .subtitle {
+      max-width: 335px;
+    }
+  }
+
+  .button {
+    margin-left: 14px;
+  }
+}

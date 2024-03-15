@@ -1,0 +1,24 @@
+@import "../abstracts/variables";
+
+.button {
+  color: $white;
+  background: $deep-yellow-pink;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 67px;
+  border: none;
+  border-radius: $br-normal;
+
+  &_type_primary {
+
+  }
+
+  &_type_secondary {
+
+  }
+
+  &_size_normal {
+    width: 200px;
+  }
+}
