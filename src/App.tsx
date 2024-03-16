@@ -2,8 +2,10 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 
-import Header from "./components/Header";
-import Cover from "./components/Cover";
+import Header from "./components/header";
+import Cover from "./components/cover";
+import CategoriesBlock from "./components/checkbox-list";
+import Catalog from "./components/catalog";
 
 function App() {
   const [count, setCount] = useState(0)
@@ -12,6 +14,7 @@ function App() {
     <>
       <Header />
       <Cover />
+      <Catalog />
       <div>
           <h1>Hello</h1>
         <a href="https://vitejs.dev" target="_blank">

@@ -1,0 +1,29 @@
+@import "../abstracts/variables";
+
+.checkbox-block {
+  color: $slate-gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: $beige;
+  width: 280px;
+  border-radius: $br-normal;
+  padding: 9px 20px 20px;
+  margin-right: 20px;
+
+  .block__title {
+    margin-bottom: 25px;
+  }
+
+  .block__title_type_secondary {
+    margin-bottom: 3px;
+  }
+
+  .button {
+    margin-top: 32px;
+
+    &_type_transparent {
+      align-self: center;
+    }
+  }
+}

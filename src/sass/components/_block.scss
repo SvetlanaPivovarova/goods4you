@@ -1,0 +1,27 @@
+@import "../abstracts/variables";
+
+.block {
+  line-height: $lh-body;
+  background: $white;
+  padding: 54px 20px;
+  margin: 0 auto;
+
+
+  &__title {
+    font-size: $fz-header-3;
+    font-weight: $fw-bold;
+    color: $slate-gray;
+    line-height: $lh-header-1;
+    margin-bottom: 33px;
+
+    &_type_secondary {
+      font-size: $fz-header-4;
+      font-weight: $fw-semi-bold;
+    }
+  }
+
+  &__flex-container {
+    display: flex;
+    justify-content: space-between;
+  }
+}

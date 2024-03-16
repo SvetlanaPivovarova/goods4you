@@ -1,0 +1,49 @@
+@import "../abstracts/variables";
+
+.checkbox-default {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+
+  .checkbox-default__label {
+    background-color: $beige;
+    border: 1px solid $pale-sand;
+    cursor: pointer;
+    height: 57px;
+    width: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      border: 3px solid $pale-sand;
+    }
+
+    &:active {
+      border: 3px solid $pale-sand;
+    }
+  }
+
+  input[type="checkbox"] {
+    visibility: hidden;
+    display: none;
+    opacity: 0;
+
+    &:disabled + .checkbox-default__label {
+      background-color: $grey-100;
+      border-color: $grey-100;
+    }
+
+    &:checked:disabled + .checkbox-default__label:after {
+      opacity: 0;
+    }
+
+    &:checked + .checkbox-default__label {
+      background-color: $pale-sand;
+    }
+
+    &:checked + .checkbox-default__label:after {
+      opacity: 1;
+    }
+  }
+}

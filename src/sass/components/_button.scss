@@ -2,7 +2,6 @@
 
 .button {
   color: $white;
-  background: $deep-yellow-pink;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,14 +10,32 @@
   border-radius: $br-normal;
 
   &_type_primary {
-
+    background: $deep-yellow-pink;
   }
 
   &_type_secondary {
+    background: $slate-gray;
+  }
 
+  &_type_transparent {
+    color: $slate-gray;
+    background: transparent;
   }
 
   &_size_normal {
     width: 200px;
+  }
+
+  &_size_medium {
+    width: 239px;
+  }
+
+  &_size_sm {
+    width: 171px;
+  }
+
+  &_size_xs {
+    width: 100px;
+    min-height: 27px;
   }
 }

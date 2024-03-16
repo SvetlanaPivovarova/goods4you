@@ -11,7 +11,7 @@ body {
   }
 }
 
-.title {
+h1, .title {
   font-size: $fz-header-1;
   font-weight: $fw-regular;
   line-height: $lh-header-1;
@@ -19,4 +19,9 @@ body {
 
 .subtitle {
   font-weight: $fw-semi-bold;
+}
+
+h2 {
+  font-size: $fz-header-2;
+  font-weight: $fw-bold;
 }
