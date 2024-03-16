@@ -1,3 +1,5 @@
+import image from "./assets/sneakers.jpg"
+
 export const categories = [
     {name: 'smartphones', id: 1},
     {name: 'laptops', id: 2},
@@ -8,3 +10,10 @@ export const categories = [
     {name: 'sneakers', id: 7},
     {name: 'sneakers', id: 8},
 ]
+
+export const product = {
+    imageSrc: image,
+    name: 'Nike Air Force 1 \'07 QS',
+    price: '110 $',
+    typeOfProduct: 'Sneakers'
+}

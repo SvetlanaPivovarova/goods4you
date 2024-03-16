@@ -1,51 +1,38 @@
-import imageSrc from "../../../assets/sneakers.jpg"
+//import imageSrc from "../../../assets/sneakers.jpg"
+import Card from "../molecules/card";
 import Button from "../atoms/button";
+import { product } from "../../../constants";
 
 function CardsBlock() {
     return (
         <section className="cards-block">
             <ul className="cards-block__list">
                 <li>
-                    <article className="card">
-                        <img src={imageSrc} className="card__image" alt="Photo of the product Sneakers"/>
-                        <h4 className="card__title">Nike Air Force 1 '07 QS</h4>
-                        <p className="card__text">110 $</p>
-                    </article>
+                    <Card product={product} />
                 </li>
                 <li>
-                    <article className="card">
-                        <img src={imageSrc} className="card__image" alt="Photo of the product Sneakers"/>
-                        <h4 className="card__title">Nike Air Force 1 '07 QS</h4>
-                        <p className="card__text">110 $</p>
-                    </article>
+                    <Card product={product} />
                 </li>
                 <li>
-                    <article className="card">
-                        <img src={imageSrc} className="card__image" alt="Photo of the product Sneakers"/>
-                        <h4 className="card__title">Nike Air Force 1 '07 QS</h4>
-                        <p className="card__text">110 $</p>
-                    </article>
+                    <Card product={product} />
                 </li>
                 <li>
-                    <article className="card">
-                        <img src={imageSrc} className="card__image" alt="Photo of the product Sneakers"/>
-                        <h4 className="card__title">Nike Air Force 1 '07 QS</h4>
-                        <p className="card__text">110 $</p>
-                    </article>
+                    <Card product={product} />
                 </li>
                 <li>
-                    <article className="card">
-                        <img src={imageSrc} className="card__image" alt="Photo of the product Sneakers"/>
-                        <h4 className="card__title">Nike Air Force 1 '07 QS</h4>
-                        <p className="card__text">110 $</p>
-                    </article>
+                    <Card product={product} />
                 </li>
                 <li>
-                    <article className="card">
-                        <img src={imageSrc} className="card__image" alt="Photo of the product Sneakers"/>
-                        <h4 className="card__title">Nike Air Force 1 '07 QS</h4>
-                        <p className="card__text">110 $</p>
-                    </article>
+                    <Card product={product} />
+                </li>
+                <li>
+                    <Card product={product} />
+                </li>
+                <li>
+                    <Card product={product} />
+                </li>
+                <li>
+                    <Card product={product} />
                 </li>
             </ul>
             <Button type={"primary"} size={"sm"} name={"Show more"} />
