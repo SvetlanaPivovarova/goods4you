@@ -1,5 +1,5 @@
 type CardProps = {
-    product: object
+    product: object,
 }
 
 function Card(props: CardProps) {

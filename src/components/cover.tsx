@@ -7,7 +7,7 @@ function Cover() {
                 <h1 className="title">Any products from famous brands with worldwide delivery</h1>
                 <p className="subtitle">We&nbsp;sell smartphones, laptops, clothes, shoes and many other products at&nbsp;low prices</p>
             </div>
-            <Button type="primary" name="Go to shopping" />
+            <Button type={"primary"} size={"normal"} name={"Go to shopping"} />
         </section>
     )
 }

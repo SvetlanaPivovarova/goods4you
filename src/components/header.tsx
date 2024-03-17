@@ -1,9 +1,6 @@
-import { useState } from 'react'
 import logo from "../assets/logo.svg"
 
 function Header() {
-    //const [count, setCount] = useState(0)
-
     return (
         <>
         <header className="header">

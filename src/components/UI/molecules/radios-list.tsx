@@ -1,6 +1,6 @@
 import Radiobutton from "../atoms/radiobutton";
 
-function RadiosList(props: object[]) {
+function RadiosList(props: object) {
     const { categories } = props
 
     const listItems = categories.map(item =>

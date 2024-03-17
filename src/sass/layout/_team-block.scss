@@ -1,0 +1,20 @@
+.team-block {
+  width: 100%;
+  padding: 60px 0 140px;
+  position: relative;
+
+  .bg {
+
+    background-image: url("/assets/team-bg.svg");
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 541px;
+    height: 550px;
+    z-index: 2;
+  }
+
+  .block__title {
+    margin-bottom: 27px;
+  }
+}
