@@ -1,7 +1,9 @@
-
-
 .checkbox-list {
-  max-width: 280px;
-  display: flex;
-  flex-wrap: wrap;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+
+  .checkbox-default {
+    margin-bottom: 28px;
+  }
 }

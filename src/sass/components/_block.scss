@@ -3,9 +3,24 @@
 .block {
   line-height: $lh-body;
   background: $white;
-  padding: 54px 20px;
+  padding: 54px 0;
   margin: 0 auto;
 
+  &_type_dark {
+    background: $rich-purple-blue;
+    color: $white;
+
+    .block__title {
+      color: $white;
+      margin-bottom: 7px;
+    }
+  }
+
+  &__content {
+    max-width: 490px;
+    display: flex;
+    flex-direction: column;
+  }
 
   &__title {
     font-size: $fz-header-3;
@@ -23,5 +38,33 @@
   &__flex-container {
     display: flex;
     justify-content: space-between;
+  }
+
+  &__text {
+    font-weight: $fw-semi-bold;
+    margin-bottom: 42px;
+    max-width: 400px;
+  }
+
+  &__caption {
+    font-size: 20px;
+    font-weight: $fw-bold;
+    align-self: end;
+    position: relative;
+    padding-left: 50px;
+  }
+
+  &__cite {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 30px;
+    background-color: $white;
+  }
+
+  &__container-with-dash {
+    border-bottom: 1px solid $grey-50;
+    margin-bottom: 20px;
   }
 }

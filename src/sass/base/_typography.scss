@@ -19,6 +19,10 @@ h1, .title {
 
 .subtitle {
   font-weight: $fw-semi-bold;
+
+  &_type_grey {
+    color: $grey-50;
+  }
 }
 
 h2 {

@@ -1,7 +1,7 @@
 //import imageSrc from "../../../assets/sneakers.jpg"
 import Card from "../molecules/card";
 import Button from "../atoms/button";
-import { product } from "../../../constants";
+import { product } from "../../../utils/constants";
 
 function CardsBlock() {
     return (

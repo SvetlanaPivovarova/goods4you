@@ -1,0 +1,17 @@
+@import "../abstracts/variables";
+
+.about-block {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 130px;
+  width: 100%;
+  align-items: center;
+
+  .block__flex-container {
+    max-width: 50%;
+  }
+
+  &__img {
+    height: 100%;
+  }
+}

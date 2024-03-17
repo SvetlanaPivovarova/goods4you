@@ -1,4 +1,4 @@
-import image from "./assets/sneakers.jpg"
+import image from "./../assets/sneakers.jpg"
 
 export const categories = [
     {name: 'smartphones', id: 1},
@@ -17,3 +17,14 @@ export const product = {
     price: '110 $',
     typeOfProduct: 'Sneakers'
 }
+
+
+function getItems(n) {
+    let res = []
+    for (let i = 0; i < n; i++) {
+        res.push('sneakers')
+    }
+    return res
+}
+
+export const items = getItems(22)
