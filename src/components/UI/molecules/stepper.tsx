@@ -7,7 +7,7 @@ function Stepper() {
     return (
         <div className="stepper">
             <p className="stepper__steps">{currentStep} of {totalSteps}</p>
-            <Button type={"tertiary"} size={"s"} name={"Next step"} />
+            <Button color={"tertiary"} size={"s"} name={"Next step"}/>
         </div>
     )
 }

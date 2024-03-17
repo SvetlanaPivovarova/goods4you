@@ -35,7 +35,7 @@ function CardsBlock() {
                     <Card product={product} />
                 </li>
             </ul>
-            <Button type={"primary"} size={"sm"} name={"Show more"} />
+            <Button color={"primary"} size={"sm"} name={"Show more"} />
         </section>
     )
 }

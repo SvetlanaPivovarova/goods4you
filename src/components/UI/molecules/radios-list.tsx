@@ -1,11 +1,19 @@
-import Radiobutton from "../atoms/radiobutton";
+import { useState } from "react";
 
 function RadiosList(props: object) {
     const { categories } = props
+    const [option, setOption] = useState(1)
+
+    function changeValue(event) {
+        setOption(event.target.value)
+    }
 
     const listItems = categories.map(item =>
         <li key={item.id}>
-            <Radiobutton name={item.name} />
+            <label className="radio-button-default">
+                <input type="radio" value={item.id} onChange={changeValue} checked={option == item.id}/>
+                <span className="radio-button-default__label">{item.name}</span>
+            </label>
         </li>
     )
     return <ul className="radios-list">{listItems}</ul>;
