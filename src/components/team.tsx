@@ -4,11 +4,12 @@ import member3 from "../assets/team-member-3.png"
 import member4 from "../assets/team-member-4.png"
 import member5 from "../assets/team-member-5.png"
 import member6 from "../assets/team-member-6.png"
+import bg from "../assets/bg-team.svg"
 
 function Team() {
     return (
         <section className="team-block block block_type_dark">
-            <span className="bg"></span>
+            <img src={bg} className="team-block__back"></img>
             <div className="container">
                 <h2 className="block__title">
                     Our team

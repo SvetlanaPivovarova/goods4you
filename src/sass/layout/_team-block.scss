@@ -3,18 +3,20 @@
   padding: 60px 0 140px;
   position: relative;
 
-  .bg {
-
-    background-image: url("/assets/team-bg.svg");
+  &__back {
     position: absolute;
     top: 0;
     right: 0;
-    width: 541px;
     height: 550px;
-    z-index: 2;
+    overflow: hidden;
   }
 
   .block__title {
     margin-bottom: 27px;
+  }
+
+  .container {
+    position: relative;
+    z-index: 2;
   }
 }

@@ -8,6 +8,7 @@ import Catalog from "./components/catalog";
 import AboutBlock from "./components/UI/organism/about-block";
 import Quiz from "./components/quiz";
 import Team from "./components/team";
+import FAQ from "./components/faq";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <AboutBlock />
       <Quiz />
       <Team />
+        <FAQ />
     </>
   )
 }
