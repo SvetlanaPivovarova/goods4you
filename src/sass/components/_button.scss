@@ -9,12 +9,20 @@
   border: none;
   border-radius: $br-normal;
 
+  &:hover {
+    border: 2px solid $slate-gray;
+  }
+
   &_type_primary {
     background: $deep-yellow-pink;
   }
 
   &_type_secondary {
     background: $slate-gray;
+
+    &:hover {
+      border-color: $pale-sand;
+    }
   }
 
   &_type_tertiary {

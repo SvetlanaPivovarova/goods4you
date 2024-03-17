@@ -8,7 +8,7 @@ type ButtonProps = {
 function Button({color, size = 'normal', name}: ButtonProps) {
     const buttonClass = `button button_type_${color} button_size_${size}`
     return (
-        <button className={buttonClass}>
+        <button className={buttonClass} aria-label={name}>
             {name}
         </button>
     )
