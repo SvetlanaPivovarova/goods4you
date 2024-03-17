@@ -5,6 +5,7 @@
   background: $white;
   padding: 54px 0;
   margin: 0 auto;
+  position: relative;
 
   &_type_dark {
     background: $rich-purple-blue;
@@ -66,5 +67,20 @@
   &__container-with-dash {
     border-bottom: 1px solid $grey-50;
     margin-bottom: 20px;
+  }
+
+  &__back {
+    position: absolute;
+    top: 0;
+    height: 550px;
+    overflow: hidden;
+
+    &_type_left {
+      left: 0;
+    }
+
+    &_type_right {
+      right: 0;
+    }
   }
 }

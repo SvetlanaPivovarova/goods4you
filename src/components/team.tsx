@@ -9,7 +9,7 @@ import bg from "../assets/bg-team.svg"
 function Team() {
     return (
         <section className="team-block block block_type_dark">
-            <img src={bg} className="team-block__back"></img>
+            <img src={bg} className="block__back block__back_type_right"></img>
             <div className="container">
                 <h2 className="block__title">
                     Our team
@@ -19,30 +19,30 @@ function Team() {
                         <li className="image-gallery__column">
                             <ul>
                                 <li>
-                                    <img src={member1} className="image-gallery__image" />
+                                    <img src={member1} className="image-gallery__image" alt={"Photo of team member"} />
                                 </li>
                                 <li>
-                                    <img src={member2} className="image-gallery__image" />
-                                </li>
-                            </ul>
-                        </li>
-                        <li className="image-gallery__column">
-                            <ul>
-                                <li>
-                                    <img src={member3} className="image-gallery__image" />
-                                </li>
-                                <li>
-                                    <img src={member4} className="image-gallery__image" />
+                                    <img src={member2} className="image-gallery__image" alt={"Photo of team member"} />
                                 </li>
                             </ul>
                         </li>
                         <li className="image-gallery__column">
                             <ul>
                                 <li>
-                                    <img src={member5} className="image-gallery__image" />
+                                    <img src={member3} className="image-gallery__image" alt={"Photo of team member"} />
                                 </li>
                                 <li>
-                                    <img src={member6} className="image-gallery__image" />
+                                    <img src={member4} className="image-gallery__image" alt={"Photo of team member"} />
+                                </li>
+                            </ul>
+                        </li>
+                        <li className="image-gallery__column">
+                            <ul>
+                                <li>
+                                    <img src={member5} className="image-gallery__image" alt={"Photo of team member"} />
+                                </li>
+                                <li>
+                                    <img src={member6} className="image-gallery__image" alt={"Photo of team member"} />
                                 </li>
                             </ul>
                         </li>
