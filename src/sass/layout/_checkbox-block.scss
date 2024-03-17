@@ -6,7 +6,7 @@
   flex-direction: column;
   background: $beige;
   border-radius: $br-normal;
-  padding: 40px 100px 60px;
+  padding: 40px 100px;
 
   .block__title {
     margin-bottom: 7px;
@@ -14,5 +14,9 @@
 
   .block__title_type_secondary {
     margin-bottom: 33px;
+  }
+
+  .checkbox-list {
+    margin-bottom: 40px;
   }
 }

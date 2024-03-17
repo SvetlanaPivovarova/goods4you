@@ -17,6 +17,12 @@
     background: $slate-gray;
   }
 
+  &_type_tertiary {
+    color: $slate-gray;
+    background: transparent;
+    border: 1px solid $slate-gray;
+  }
+
   &_type_transparent {
     color: $slate-gray;
     background: transparent;
@@ -32,6 +38,11 @@
 
   &_size_sm {
     width: 171px;
+  }
+
+  &_size_s {
+    width: 148px;
+    height: 50px;
   }
 
   &_size_xs {

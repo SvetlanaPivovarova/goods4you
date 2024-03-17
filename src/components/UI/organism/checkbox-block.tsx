@@ -1,5 +1,6 @@
 import CheckboxList from "../molecules/checkbox-list";
 import { items } from "../../../utils/constants";
+import Stepper from "../molecules/stepper";
 
 function CheckboxBlock() {
     return (
@@ -14,7 +15,7 @@ function CheckboxBlock() {
                 </h3>
                 <CheckboxList items={items} />
             </div>
-
+            <Stepper />
         </section>
     )
 }

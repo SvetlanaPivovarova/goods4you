@@ -22,7 +22,7 @@ export const product = {
 function getItems(n) {
     let res = []
     for (let i = 0; i < n; i++) {
-        res.push('sneakers')
+        res.push({id: i, name: 'sneakers'})
     }
     return res
 }
