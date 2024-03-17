@@ -4,7 +4,7 @@ function Header() {
     return (
         <>
         <header className="header">
-            <div className="header__container">
+            <div className="container header__container">
                 <img src={logo} className="logo" alt="logo of store Goods4you" />
                 <nav>
                     <ul className="menu">

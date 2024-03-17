@@ -3,8 +3,13 @@
 .footer {
   background: $slate-gray;
   height: 50px;
+  padding: 21px 0 16px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 21px 130px 16px;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }

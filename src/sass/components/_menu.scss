@@ -8,6 +8,11 @@
   &__link {
     color: $white;
     margin-right: 36px;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
 
     &:last-of-type {
       margin-right: 0;

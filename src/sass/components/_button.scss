@@ -8,6 +8,7 @@
   min-height: 67px;
   border: none;
   border-radius: $br-normal;
+  cursor: pointer;
 
   &:hover {
     border: 2px solid $slate-gray;
