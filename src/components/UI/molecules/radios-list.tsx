@@ -1,19 +1,20 @@
+import React from "react";
 import { useState } from "react";
 
 type RadiosProps = {
     categories:
         {
             name: string,
-            id: number
+            id: number | string
         }[]
 }
 
 
 function RadiosList(props: RadiosProps) {
     const { categories } = props
-    const [option, setOption] = useState(1)
+    const [option, setOption] = useState("1")
 
-    function changeValue(event) {
+    function changeValue(event: React.ChangeEvent<HTMLInputElement>) {
         setOption(event.target.value)
     }
 
