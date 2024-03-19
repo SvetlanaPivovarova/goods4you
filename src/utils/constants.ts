@@ -20,7 +20,7 @@ export const product = {
 
 
 function getItems(n: number) {
-    let res = []
+    const res = []
     for (let i = 0; i < n; i++) {
         res.push({id: i, name: 'sneakers'})
     }

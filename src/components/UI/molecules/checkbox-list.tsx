@@ -1,6 +1,12 @@
 import Checkbox from "../atoms/checkbox";
 
-function CheckboxList(props: object[]) {
+type CheckboxListProps = {
+    items:
+        {id: number,
+        name: string}[]
+}
+
+function CheckboxList(props: CheckboxListProps) {
     const { items } = props
 
     const listItems = items.map(item =>

@@ -1,6 +1,15 @@
 import { useState } from "react";
 
-function RadiosList(props: object) {
+type RadiosProps = {
+    categories:
+        {
+            name: string,
+            id: number
+        }[]
+}
+
+
+function RadiosList(props: RadiosProps) {
     const { categories } = props
     const [option, setOption] = useState(1)
 

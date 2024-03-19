@@ -1,5 +1,10 @@
 type CardProps = {
-    product: object,
+    product: {
+        imageSrc: string,
+        name: string,
+        typeOfProduct: string,
+        price: string,
+    },
 }
 
 function Card(props: CardProps) {

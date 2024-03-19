@@ -1,4 +1,8 @@
-function Checkbox(props: string) {
+type CheckboxProps = {
+    name: string;
+}
+
+function Checkbox(props: CheckboxProps) {
     const { name } = props
     return (
         <label className="checkbox-default">

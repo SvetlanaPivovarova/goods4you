@@ -10,7 +10,7 @@ function RadiosBlock() {
             <h4 className="block__title block__title_type_secondary">Category</h4>
             <form className="form">
                 <RadiosList categories={categories} />
-                <Button color={"secondary"} size={"medium"} name={"Apply"} type="submit" />
+                <Button color={"secondary"} size={"medium"} name={"Apply"} />
                 <Button color={"transparent"} size={"xs"} name={"Reset"} />
             </form>
         </section>
