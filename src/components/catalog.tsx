@@ -4,7 +4,7 @@ import RadiosBlock from "./UI/organism/radios-block";
 function Catalog() {
     return (
         <section className="block">
-            <h4 className="block__title">Catalog</h4>
+            <h2 className="block__title">Catalog</h2>
             <div className="block__flex-container">
                 <RadiosBlock />
                 <CardsBlock />
