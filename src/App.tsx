@@ -1,27 +1,20 @@
-import Header from "./components/header";
-import Cover from "./components/cover";
-import Catalog from "./components/catalog";
-import AboutBlock from "./components/UI/organism/about-block";
-import Quiz from "./components/quiz";
-import Team from "./components/team";
-import FAQ from "./components/faq";
-import Footer from "./components/footer";
-import {Counter} from "./components/some";
+import { Routes, Route } from 'react-router-dom';
+import MainPage from "./components/UI/pages/main-page";
+import AllProducts from "./components/UI/pages/all-products";
+import OneProduct from "./components/UI/pages/one-product";
+import NotFoundPage from "./components/UI/pages/not-found";
+
 
 function App() {
   return (
-    <>
-      <Header />
-      <Cover />
-      <Catalog />
-      <AboutBlock />
-      <Quiz />
-      <Team />
-      <FAQ />
-      <Counter />
-      <Footer />
-
-    </>
+    <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/admin">
+            <Route index element={<AllProducts />} />
+            <Route path="product" element={<OneProduct />} />
+        </Route>
+        <Route path="*" element={<NotFoundPage />} />
+    </Routes>
   )
 }
 
