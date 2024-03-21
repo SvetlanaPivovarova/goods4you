@@ -5,7 +5,7 @@
   font-weight: $fw-semi-bold;
   display: flex;
 
-  &__link {
+  &__link, &__link-item {
     color: $white;
     margin-right: 36px;
     cursor: pointer;

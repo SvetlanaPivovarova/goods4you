@@ -1,7 +1,9 @@
+import Header from "../../header";
+
 function AllProductsPage() {
     return (
         <>
-            <h1>All products</h1>
+            <Header type={"secondary"} />
         </>
     )
 }

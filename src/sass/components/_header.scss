@@ -12,4 +12,20 @@
     border-bottom: 1px solid rgba(255, 255, 255, .5);
     min-height: 55px;
   }
+
+  &_type_primary {
+    .menu_type_secondary {
+      display: none;
+    }
+  }
+
+  &_type_secondary {
+    .header__container {
+      border-bottom: none;
+    }
+
+    .menu_type_primary {
+      display: none;
+    }
+  }
 }

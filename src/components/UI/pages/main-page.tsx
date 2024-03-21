@@ -11,7 +11,7 @@ import Footer from "../../footer";
 function MainPage() {
     return (
         <>
-            <Header />
+            <Header type={"primary"} />
             <Cover />
             <Catalog />
             <AboutBlock />
