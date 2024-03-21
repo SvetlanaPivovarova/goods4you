@@ -1,0 +1,10 @@
+@import "../abstracts/variables";
+
+.text-input {
+  background: $grey-200;
+  border: none;
+  color: $grey-10;
+  border-radius: $br-normal;
+  padding: 19px 0 19px 17px;
+  flex-shrink: 1;
+}
