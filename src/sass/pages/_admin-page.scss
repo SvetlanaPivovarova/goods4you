@@ -6,6 +6,11 @@
   align-items: start;
   padding: 55px 0 100px;
 
+  &__container {
+    display: flex;
+    width: 100%;
+  }
+
   .block__title {
     margin-bottom: 50px;
   }
@@ -16,5 +21,51 @@
 
   .cards-block__list {
     max-width: 100%;
+  }
+
+  .gallery-products {
+    margin-right: 40px;
+  }
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 0;
+
+  &__title {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__paragraph {
+    color: $grey-10;
+    font-weight: $fw-semi-bold;
+    margin-bottom: 24px;
+    display: flex;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  &__rating {
+    margin-left: 10px;
+    display: flex;
+  }
+
+  &__value {
+    margin-left: 10px;
+    color: $slate-gray;
+  }
+
+  &__id {
+    display: block;
+    font-weight: $fw-semi-bold;
+    color: $grey-10;
+
+    span {
+      color: $slate-gray;
+    }
   }
 }
