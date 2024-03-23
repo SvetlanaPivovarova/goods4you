@@ -5,12 +5,17 @@ import AboutBlock from "../organism/about-block";
 import Quiz from "../../quiz";
 import Team from "../../team";
 import FAQ from "../../faq";
-import {Counter} from "../../some";
 import Footer from "../../footer";
+import {categoriesAPI} from "../../../services/CategoriesService";
+import Loader from "../atoms/loader";
+
 
 function MainPage() {
+    const {isLoading} = categoriesAPI.useFetchAllCategoriesQuery('');
+
     return (
         <>
+            {isLoading && <Loader />}
             <Header type={"primary"} />
             <Cover />
             <Catalog />
@@ -18,7 +23,6 @@ function MainPage() {
             <Quiz />
             <Team />
             <FAQ />
-            <Counter />
             <Footer />
         </>
     )

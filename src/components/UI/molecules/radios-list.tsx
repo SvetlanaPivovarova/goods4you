@@ -3,26 +3,23 @@ import { useState } from "react";
 
 type RadiosProps = {
     categories:
-        {
-            name: string,
-            id: number | string
-        }[]
+        string[]
 }
 
 
 function RadiosList(props: RadiosProps) {
     const { categories } = props
-    const [option, setOption] = useState("1")
+    const [option, setOption] = useState("")
 
     function changeValue(event: React.ChangeEvent<HTMLInputElement>) {
         setOption(event.target.value)
     }
 
     const listItems = categories.map(item =>
-        <li key={item.id}>
+        <li key={item}>
             <label className="radio-button-default">
-                <input type="radio" value={item.id} onChange={changeValue} checked={option == item.id}/>
-                <span className="radio-button-default__label">{item.name}</span>
+                <input type="radio" value={item} onChange={changeValue} checked={option == item}/>
+                <span className="radio-button-default__label">{item}</span>
             </label>
         </li>
     )

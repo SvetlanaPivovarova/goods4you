@@ -1,8 +1,9 @@
 import CheckboxList from "../molecules/checkbox-list";
-import { items } from "../../../utils/constants";
 import Stepper from "../molecules/stepper";
+import {categoriesAPI} from "../../../services/CategoriesService";
 
 function CheckboxBlock() {
+    const {data} = categoriesAPI.useFetchAllCategoriesQuery('')
     return (
         <section className="checkbox-block container block">
             <div className="block__container-with-dash">
@@ -13,7 +14,7 @@ function CheckboxBlock() {
                 <h3 className="block__title block__title_type_secondary">
                     What type of product are you considering?
                 </h3>
-                <CheckboxList items={items} />
+                {data&& <CheckboxList items={data} />}
             </div>
             <Stepper />
         </section>

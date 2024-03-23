@@ -1,28 +1,17 @@
-import { useSelector, useDispatch } from "../services/types/types-store";
-import { RootState } from "../services/store";
-import { increment, decrement } from "../services/slices/counter-slice";
-
+import {useAppDispatch} from "../hooks/redux";
+import {useEffect} from "react";
+import {fetchUsers} from "../store/reducers/ActionCreators";
+import Posts from "./UI/posts";
 export function Counter() {
-    const count = useSelector((state: RootState) => state.counter.value)
-    const dispatch = useDispatch()
+    const dispatch = useAppDispatch();
 
+    useEffect(() => {
+        dispatch(fetchUsers())
+    }, [ ])
     return (
-        <div>
-            <div>
-                <button
-                    aria-label="Increment value"
-                    onClick={() => dispatch(increment())}
-                    >
-                    Increment
-                </button>
-                <span>{count}</span>
-                <button
-                    aria-label="Decrement value"
-                    onClick={() => dispatch(decrement())}
-                    >
-                    Decrement
-                </button>
-            </div>
-        </div>
+        <>
+            <Posts />
+        </>
+
     )
 }

@@ -41,7 +41,7 @@ function Header(props: HeaderProps) {
                             </a>
                         </li>
                         <li className="menu__link">
-                            <Link className="menu__link-item" to={"/admin"}>
+                            <Link className="menu__link-item" to={"/products"}>
                                 For staff
                             </Link>
                         </li>
