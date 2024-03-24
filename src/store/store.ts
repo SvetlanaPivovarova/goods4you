@@ -1,6 +1,7 @@
 import {combineReducers} from "redux";
 import {configureStore} from "@reduxjs/toolkit";
-import userReducer from "./reducers/UserSlice"
+import userReducer from "./reducers/UserSlice";
+import categoryReducer from "./reducers/CategorySlice";
 import {postAPI} from "../services/PostService";
 import {categoriesAPI} from "../services/CategoriesService";
 import {allProductsAPI} from "../services/AllProductsService";
@@ -8,6 +9,7 @@ import {allProductsAPI} from "../services/AllProductsService";
 
 const rootReducer = combineReducers({
     userReducer,
+    categoryReducer,
     [postAPI.reducerPath]: postAPI.reducer,
     [categoriesAPI.reducerPath]: categoriesAPI.reducer,
     [allProductsAPI.reducerPath]: allProductsAPI.reducer

@@ -14,7 +14,7 @@ function CheckboxBlock() {
                 <h3 className="block__title block__title_type_secondary">
                     What type of product are you considering?
                 </h3>
-                {data&& <CheckboxList items={data} />}
+                {data && <CheckboxList items={data} />}
             </div>
             <Stepper />
         </section>
