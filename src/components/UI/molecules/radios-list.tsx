@@ -13,12 +13,12 @@ type RadiosProps = {
 function RadiosList(props: RadiosProps) {
     const { categories } = props
     const [option, setOption] = useState("")
-    const dispath = useAppDispatch()
+    const dispatch = useAppDispatch()
     const count = useAppSelector((state: RootState) => state.category)
 
     function changeValue(event: React.ChangeEvent<HTMLInputElement>) {
         setOption(event.target.value)
-        dispath(categorySlice.actions.addCategory(event.target.value))
+        dispatch(categorySlice.actions.addCategory(event.target.value))
     }
 
     const listItems = categories.map(item =>
