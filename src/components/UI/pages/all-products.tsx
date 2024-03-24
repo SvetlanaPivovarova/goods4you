@@ -1,10 +1,8 @@
 import Header from "../../header";
 import CardsBlock from "../organism/cards-block";
 import SearchForm from "../molecules/search-form";
-import {productsBySearchingAPI} from "../../../services/ProductsBySearching";
 import {useEffect, useState} from "react";
 import {useAppDispatch} from "../../../hooks/redux";
-import {categorySlice} from "../../../store/reducers/CategorySlice";
 import {searchSlice} from "../../../store/reducers/SearchSlice";
 
 function AllProductsPage() {

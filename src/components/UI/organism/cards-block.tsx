@@ -11,15 +11,16 @@ import {productsLimitsAPI} from "../../../services/ProductsLimitsService";
 import {productsBySearchingAPI} from "../../../services/ProductsBySearching";
 
 function CardsBlock() {
-    let location = useLocation();
+    const location = useLocation();
     const category = useAppSelector((state: RootState) => state.categoryReducer.category)
     const search = useAppSelector((state: RootState) => state.searchReducer.search)
 
-    const {data, isLoading, error} = allProductsAPI.useFetchAllProductsQuery(0)
-    const {data: filteredData, isLoading: isLoadingFiltered} = productsByCategoryAPI.useFetchProductsByCategoryQuery(category)
-    const {data: limitedCards} = productsLimitsAPI.useFetchProductsLimitsQuery(0)
-    const {data: searchedCards} = productsBySearchingAPI.useFetchProductsBySearchingQuery(search)
+    const [skip, setSkip] = useState(0)
 
+    const {data, isLoading, error} = allProductsAPI.useFetchAllProductsQuery(0)
+    const {data: filteredData, isLoading: isLoadingFiltered, error: filteredError} = productsByCategoryAPI.useFetchProductsByCategoryQuery(category)
+    const {data: limitedCards, isLoading: limitedLoading, error: limitedError} = productsLimitsAPI.useFetchProductsLimitsQuery(skip)
+    const {data: searchedCards, isLoading: searchedLoading, error: searchedError} = productsBySearchingAPI.useFetchProductsBySearchingQuery(search)
 
     const [cardsData, setCardsData] = useState(data)
     const [isLoadingCards, setIsLoadingCards] = useState(true)
@@ -28,13 +29,24 @@ function CardsBlock() {
     const [isButtonMoreShown, setIsButtonMoreShown] = useState(false)
 
     useEffect(() => {
+        if (isLoading || isLoadingFiltered || searchedLoading || limitedLoading) {
+            setIsLoadingCards(true)
+        }
+    }, [isLoading, isLoadingFiltered, searchedLoading, limitedLoading])
+
+    useEffect(() => {
         if (location.pathname === '/products') {
             if (limitedCards) {
                 setCardsData(limitedCards)
-                //loading
+                setIsLoadingCards(limitedLoading)
+                if (skip < limitedCards.total - 9) {
+                    setIsButtonMoreShown(true)
+                }
             }
             if (search && searchedCards) {
                 setCardsData(searchedCards)
+                setIsLoadingCards(searchedLoading)
+                setIsButtonMoreShown(false)
             }
         }
         else {
@@ -46,12 +58,8 @@ function CardsBlock() {
                 setIsLoadingCards(isLoading)
             }
         }
-    }, [data, isLoading, filteredData, isLoadingFiltered, category, location, search])
+    }, [data, isLoading, filteredData, isLoadingFiltered, category, location, search, limitedCards, searchedCards, searchedLoading])
 
-
-    useEffect(() => {
-
-    }, [data, isLoading, filteredData, isLoadingFiltered, category])
 
     useEffect(() => {
         if (cardsData) {
@@ -63,24 +71,36 @@ function CardsBlock() {
                 setIsButtonMoreShown(true);
             } else setIsButtonMoreShown(false);
         }
-    }, [cardsNumber, data, cardsData]);
+    }, [cardsNumber, data, cardsData, skip]);
 
     function addMoreCard() {
         setCardsNumber(cardsNumber + cardsNumber);
     }
 
+    function addSkip(event) {
+        event.preventDefault()
+        setSkip(skip => skip + 9)
+    }
+
     return (
         <section className="cards-block">
             {isLoadingCards && <Loader />}
-            {data && (
+            {(error || filteredError || searchedError || limitedError) && <p>Can`t find products</p>}
+            {(data || cardsData) && (
                 <>
                     <ul className="cards-block__list">
                         {renderingCards.map((item) => <li key={item.id}><Card product={item} /></li>)}
                     </ul>
-                    <Button color={"primary"} size={"sm"} name={"Show more"}
+                    {location.pathname !== "/products" &&
+                        <Button color={"primary"} size={"sm"} name={"Show more"}
                             onClick={addMoreCard}
                             isVisible={isButtonMoreShown}
-                    />
+                    />}
+                    {(location.pathname === "/products" && !search && limitedCards) &&
+                        <Button color={"primary"} size={"sm"} name={"Show more"}
+                        onClick={addSkip}
+                        isVisible={skip < limitedCards.total}
+                        />}
                 </>
             )}
             {error && <p>Not found any products</p>}
