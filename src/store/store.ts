@@ -5,6 +5,7 @@ import categoryReducer from "./reducers/CategorySlice";
 import {postAPI} from "../services/PostService";
 import {categoriesAPI} from "../services/CategoriesService";
 import {allProductsAPI} from "../services/AllProductsService";
+import {productsByCategoryAPI} from "../services/ProductsByCategoryService";
 
 
 const rootReducer = combineReducers({
@@ -12,14 +13,19 @@ const rootReducer = combineReducers({
     categoryReducer,
     [postAPI.reducerPath]: postAPI.reducer,
     [categoriesAPI.reducerPath]: categoriesAPI.reducer,
-    [allProductsAPI.reducerPath]: allProductsAPI.reducer
+    [allProductsAPI.reducerPath]: allProductsAPI.reducer,
+    [productsByCategoryAPI.reducerPath]: productsByCategoryAPI.reducer
 })
 
 export const setupStore = () => {
   return configureStore({
       reducer: rootReducer,
       middleware: (getDefaultMiddleware) =>
-          getDefaultMiddleware().concat(postAPI.middleware).concat(categoriesAPI.middleware).concat(allProductsAPI.middleware)
+          getDefaultMiddleware()
+              .concat(postAPI.middleware)
+              .concat(categoriesAPI.middleware)
+              .concat(allProductsAPI.middleware)
+              .concat(productsByCategoryAPI.middleware)
   })
 }
 

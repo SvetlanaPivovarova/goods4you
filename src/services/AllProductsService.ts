@@ -6,7 +6,7 @@ export const allProductsAPI = createApi({
     baseQuery: fetchBaseQuery({baseUrl: 'https://dummyjson.com'}),
     endpoints: (build) => ({
         fetchAllProducts: build.query<IProduct[], number>({
-            query: (limit: number = 9) => ({
+            query: (limit: number = 0) => ({
                 url: `/products`,
                 params: {
                     _limit: limit

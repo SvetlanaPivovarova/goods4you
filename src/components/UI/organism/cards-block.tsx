@@ -5,29 +5,43 @@ import Loader from "../atoms/loader";
 import {allProductsAPI} from "../../../services/AllProductsService";
 import {useAppSelector} from "../../../hooks/redux";
 import {RootState} from "../../../store/store";
-import {useSelector} from "react-redux";
+import {productsByCategoryAPI} from "../../../services/ProductsByCategoryService";
 
 function CardsBlock() {
     const count = useAppSelector((state: RootState) => state.categoryReducer.category)
-    const countN = useSelector((state: RootState) => state.categoryReducer.category)
-    console.log('selected', count, countN)
 
-    const {data, isLoading, error} = allProductsAPI.useFetchAllProductsQuery(9)
+    const {data, isLoading, error} = allProductsAPI.useFetchAllProductsQuery(0)
+    const {data: filteredData, isLoading: isLoadingFiltered} = productsByCategoryAPI.useFetchProductsByCategoryQuery(count)
 
+    const [cardsData, setCardsData] = useState(data)
+    const [isLoadingCards, setIsLoadingCards] = useState(true)
     const [cardsNumber, setCardsNumber] = useState(9);
     const [renderingCards, setRenderingCards] = useState([]);
     const [isButtonMoreShown, setIsButtonMoreShown] = useState(false);
 
+
     useEffect(() => {
-        if (data) {
-            const cards = data.products
+        if (count) {
+            setCardsData(filteredData)
+            setIsLoadingCards(isLoadingFiltered)
+
+        } else {
+            setCardsData(data)
+            setIsLoadingCards(isLoading)
+        }
+    }, [data, isLoading, filteredData, isLoadingFiltered, count])
+
+    useEffect(() => {
+        if (cardsData) {
+            setIsLoadingCards(false)
+            const cards = cardsData.products
             const moreRenderingCards = cards.slice(0, cardsNumber);
             setRenderingCards(moreRenderingCards);
             if (moreRenderingCards.length < cards.length) {
                 setIsButtonMoreShown(true);
             } else setIsButtonMoreShown(false);
         }
-    }, [cardsNumber, data]);
+    }, [cardsNumber, data, cardsData]);
 
     function addMoreCard() {
         setCardsNumber(cardsNumber + cardsNumber);
@@ -35,7 +49,7 @@ function CardsBlock() {
 
     return (
         <section className="cards-block">
-            {isLoading && <Loader />}
+            {isLoadingCards && <Loader />}
             {data && (
                 <>
                     <ul className="cards-block__list">
