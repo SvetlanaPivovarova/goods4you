@@ -1,0 +1,14 @@
+.team-block {
+  width: 100%;
+  padding: 60px 0 140px;
+  position: relative;
+
+  .block__title {
+    margin-bottom: 27px;
+  }
+
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+}

@@ -1,0 +1,71 @@
+@import "../abstracts/variables";
+
+.container {
+  margin: 0 auto;
+  width: 320px;
+  padding: 0 10px;
+
+  @media #{$media-tablet} {
+    width: 480px;
+    padding: 0 18px;
+  }
+
+  @media #{$media-laptop} {
+    width: 768px;
+    padding: 0 20px;
+  }
+
+  @media #{$media-desktop} {
+    width: 1180px;
+    padding: 0;
+  }
+
+  &__wrapper{
+    &_blue {
+      background: $rich-purple-blue;
+      color: $white;
+    }
+
+    &_white {
+      background: $white;
+      color:  $slate-gray;
+    }
+
+    &_beige {
+      background-color: $beige;
+      color: $slate-gray;
+    }
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.lh-medium {
+  line-height: 1.4;
+}
+
+.section {
+  border-bottom: 1px solid $grey-100;
+  max-width: 100%;
+  position: relative;
+
+  &__title {
+    margin: 49px auto 0;
+    max-width: 270px;
+
+    @media #{$media-laptop} {
+      margin-top: 87px;
+      max-width: 800px;
+    }
+  }
+}

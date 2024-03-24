@@ -1,0 +1,136 @@
+@import "../abstracts/variables";
+
+.section-dropdown-menu {
+  width: 100%;
+  display: block;
+
+  [type="checkbox"]:checked,
+  [type="checkbox"]:not(:checked){
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .for-dropdown{
+    z-index: 10;
+    position: absolute;
+    top: 17px;
+    right: calc((100% - 320px) / 2 + 18px);
+
+    @media #{$media-tablet} {
+      right: calc((100% - 480px) / 2 + 18px);
+    }
+  }
+}
+
+.section-dropdown {
+  &__item {
+    min-height: 45px;
+    border-bottom: 1px solid $dark-gray;
+
+    margin: 0 auto;
+    width: 320px;
+
+    @media #{$media-tablet} {
+      width: 480px;
+    }
+
+    @media #{$media-laptop} {
+      width: 768px;
+    }
+
+    @media #{$media-desktop} {
+      width: 945px;
+    }
+
+    a {
+      color: $pale-sand;
+      padding: 12px 24px 22px;
+      text-align: left;
+      display: inline-block;
+    }
+
+    &_active {
+      a {
+        font-weight: $fw-bold;
+      }
+    }
+  }
+
+  .dropdown-sub {
+    &:checked + label,
+    &:not(:checked) + label{
+      position: relative;
+      transition: all 200ms linear;
+      padding: 30px 25px 21px 0;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+    }
+
+    &:not(:checked) + label .ui-arrow {
+      transition: transform 200ms linear;
+    }
+    &:checked + label .ui-arrow {
+      transform: rotate(45deg);
+      transition: transform 200ms linear;
+    }
+  }
+
+  .ui-arrow:after,
+  .ui-arrow:before {
+    content: "";
+    width: 25px;
+    display: block;
+    position: absolute;
+    height: 2px;
+    background-color: $slate-gray;
+    transition-duration: .25s;
+    z-index: 2;
+  }
+  .ui-arrow:after {
+    transform: rotate(90deg);
+  }
+  .ui-arrow:before {
+    transform: rotate(0);
+  }
+
+  .for-dropdown-sub{
+    color: $slate-gray;
+    font-size: 20px;
+  }
+
+  .b-login-wrapper {
+    .icon {
+      position: relative;
+      top: -2px;
+    }
+  }
+}
+
+.section-dropdown-sub {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: none;
+  height: 0;
+  opacity: 0;
+  padding-left: 24px;
+  padding-right: 24px;
+  overflow: hidden;
+  transition: all $transition-speed linear;
+
+  .dropdown-sub:checked ~ &{
+    pointer-events: auto;
+    opacity: 1;
+    height: auto;
+    color: rgba(36, 36, 36, .5);
+    font-size: 16px;
+    font-weight: $fw-semi-bold;
+    padding-bottom: 40px;
+  }
+}

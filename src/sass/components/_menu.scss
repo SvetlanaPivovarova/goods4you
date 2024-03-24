@@ -1,0 +1,21 @@
+@import "../abstracts/variables";
+
+.menu {
+  font-size: 14px;
+  font-weight: $fw-semi-bold;
+  display: flex;
+
+  &__link {
+    color: $white;
+    margin-right: 36px;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+}

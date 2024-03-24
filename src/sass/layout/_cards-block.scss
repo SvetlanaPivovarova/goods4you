@@ -1,0 +1,14 @@
+
+.cards-block {
+
+  &__list {
+    max-width: 880px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .button {
+    margin: 31px auto 0;
+  }
+}

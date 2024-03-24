@@ -1,0 +1,48 @@
+/*colors*/
+$white: #FFFFFF;
+$black: #000000;
+$rich-purple-blue: #484283;
+$deep-yellow-pink : #F14F4F;
+$border-grey: grey;
+$grey-100: #F0F0F0;
+$grey-50: #808080;
+$slate-gray: #444B58;
+$dark-gray: #242424;
+$beige: #FFF4EE;
+$pale-sand: #DBBBA9;
+
+/*Fonts*/
+$body-font: 'Jost', sans-serif;
+
+$fz-header-1: 36px;
+$fz-header-2: 30px;
+$fz-header-3: 30px;
+$fz-header-4: 24px;
+
+$fz-body: 16px;
+
+$fz-button: 20px;
+
+$lh-header-1: 1.4em;
+$lh-header-4-5: 1.21em;
+$lh-body: 1.4em;
+
+$fw-lighter: 200;
+$fw-light: 300;
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-semi-bold: 600;
+$fw-bold: 700;
+
+/* Border */
+$br-normal: 4px;
+
+/* Transition */
+$transition-speed: .3s;
+
+/* Media Query breakpoints */
+$media-mobile: "(max-width: 480px)";
+$media-tablet: "(min-width: 481px)";
+$media-laptop: "(min-width: 769px)";
+$media-desktop: "(min-width: 1025px)";
+$media-desktop-lg: "(min-width: 1201px)";
