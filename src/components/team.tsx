@@ -8,7 +8,7 @@ import bg from "../assets/bg-team.svg"
 
 function Team() {
     return (
-        <section className="team-block block block_type_dark">
+        <section className="team-block block block_type_dark" id="our-team">
             <img src={bg} className="block__back block__back_type_right"></img>
             <div className="container">
                 <h2 className="block__title">

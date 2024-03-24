@@ -1,5 +1,11 @@
 @import "../abstracts/variables";
 
+html {
+  @media (prefers-reduced-motion: no-preference) {
+    scroll-behavior: smooth;
+  }
+}
+
 html, body {
   height: 100%;
   font-family: $body-font;

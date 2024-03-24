@@ -3,7 +3,7 @@ import aboutFigure from "../../../assets/about-figure.svg"
 
 function AboutBlock() {
     return (
-        <section className="block block_type_dark about-block">
+        <section className="block block_type_dark about-block" id={"about-us"}>
             <div className="container">
                 <img src={aboutFigure} className="block__back block__back_type_left"></img>
                 <div className="block__content">

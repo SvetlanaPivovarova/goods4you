@@ -6,12 +6,32 @@ function Footer() {
             <div className="container">
                 <img src={logo} className="logo" alt="logo of store Goods4you" />
                 <nav>
-                    <ul className="menu">
-                        <li className="menu__link">Catalog</li>
-                        <li className="menu__link">About us</li>
-                        <li className="menu__link">Product selection</li>
-                        <li className="menu__link">Our team</li>
-                        <li className="menu__link">FAQ</li>
+                    <ul className="menu menu_type_primary">
+                        <li className="menu__link">
+                            <a className="menu__link-item" href={"#catalog"}>
+                                Catalog
+                            </a>
+                        </li>
+                        <li className="menu__link">
+                            <a className="menu__link-item" href={"#about-us"}>
+                                About us
+                            </a>
+                        </li>
+                        <li className="menu__link">
+                            <a className="menu__link-item" href={"#product-selection"}>
+                                Product selection
+                            </a>
+                        </li>
+                        <li className="menu__link">
+                            <a className="menu__link-item" href={"#our-team"}>
+                                Our team
+                            </a>
+                        </li>
+                        <li className="menu__link">
+                            <a className="menu__link-item" href={"#faq"}>
+                                FAQ
+                            </a>
+                        </li>
                     </ul>
                 </nav>
             </div>
