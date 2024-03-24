@@ -4,7 +4,7 @@ type ButtonProps = {
     size: string,
     name: string,
     onClick: () => void,
-    isVisible: boolean
+    isVisible?: boolean
 }
 
 function Button({color, size = 'normal', name, onClick, isVisible}: ButtonProps) {
