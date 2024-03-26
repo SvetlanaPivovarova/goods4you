@@ -1,20 +1,16 @@
 import React from "react";
 import { useState } from "react";
-import {useAppDispatch, useAppSelector} from "../../../hooks/redux";
+import {useAppDispatch} from "../../../hooks/redux";
 import {categorySlice} from "../../../store/reducers/CategorySlice"
-import {RootState} from "../../../store/store";
 
 type RadiosProps = {
-    categories:
-        string[]
+    categories: string[]
 }
-
 
 function RadiosList(props: RadiosProps) {
     const { categories } = props
     const [option, setOption] = useState("")
     const dispatch = useAppDispatch()
-    const count = useAppSelector((state: RootState) => state.category)
 
     function changeValue(event: React.ChangeEvent<HTMLInputElement>) {
         setOption(event.target.value)
@@ -29,7 +25,7 @@ function RadiosList(props: RadiosProps) {
             </label>
         </li>
     )
-    return <ul className="radios-list">{listItems}: {count}</ul>;
+    return <ul className="radios-list">{listItems}</ul>;
 }
 
 export default RadiosList

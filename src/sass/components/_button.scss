@@ -30,6 +30,15 @@
     color: $slate-gray;
     background: transparent;
     border: 1px solid $slate-gray;
+
+    &:hover {
+      border-color: $pale-sand;
+    }
+
+    &:disabled {
+      color: $grey-10;
+      border-color: $grey-10;
+    }
   }
 
   &_type_transparent {

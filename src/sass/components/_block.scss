@@ -41,6 +41,13 @@
     justify-content: space-between;
   }
 
+  &__dark-container {
+    background-color: $pale-sand;
+    padding: 35px 40px;
+    border-radius: $br-normal;
+    margin-bottom: 16px;
+  }
+
   &__text {
     font-weight: $fw-semi-bold;
     margin-bottom: 42px;
