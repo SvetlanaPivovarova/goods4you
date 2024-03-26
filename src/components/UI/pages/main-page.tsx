@@ -17,13 +17,15 @@ function MainPage() {
         <>
             {isLoading && <Loader />}
             <Header type={"primary"} />
-            <Cover />
-            <Catalog />
-            <AboutBlock />
-            <Quiz />
-            <Team />
-            <FAQ />
-            <Footer />
+            <main>
+                <Cover />
+                <Catalog />
+                <AboutBlock />
+                <Quiz />
+                <Team />
+                <FAQ />
+                <Footer />
+            </main>
         </>
     )
 }
