@@ -11,12 +11,14 @@ function OneProduct() {
     const [product, setProduct] = useState<IProduct>({})
     const [isLoading, setIsLoading] = useState(true)
 
+    const discountPrice = (product.price * ((100 - product.discountPercentage) / 100)).toFixed(2).slice(0, -1)
+    const starRating = Array.from({ length: Math.round(product.rating) }, (_, i) => i);
+
     useEffect(() => {
         fetch(`https://dummyjson.com/products/${id}`)
             .then((response) => response.json())
             .then((data) => {
                 setProduct(data);
-                console.log('po', data)
             })
             .catch((error) => {
                 console.error("Error fetching data:", error);
@@ -24,13 +26,6 @@ function OneProduct() {
             })
             .finally(() => setIsLoading(false));
     }, [id]);
-
-    console.log(product.images)
-
-    //const { product } = props
-    //const product = data
-    const discountPrice = (product.price * ((100 - product.discountPercentage) / 100)).toFixed(2).slice(0, -1)
-    const starRating = Array.from({ length: Math.round(product.rating) }, (_, i) => i);
 
     return (
         <>
@@ -41,7 +36,9 @@ function OneProduct() {
                     <h2 className="block__title">Product {product.id}</h2>
                     <div className="admin-page__container">
                         <div className="gallery-products">
-                            <img src={product.thumbnail} className="gallery-products__main-image" alt={`main image of product ${product.title}`} />
+                            <div className="gallery-products__main-image-container">
+                                <img src={product.thumbnail} className="gallery-products__main-image" alt={`main image of product ${product.title}`} />
+                            </div>
                             <ul className="gallery-products__list">
                                 {product.images && product.images.map(image =>
                                 <li className="gallery-products__list-item">
@@ -93,7 +90,6 @@ function OneProduct() {
                     </div>
                 </section>
             }
-
         </>
     )
 }

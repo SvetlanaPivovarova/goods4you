@@ -17,7 +17,7 @@ function MainPage() {
         <>
             {isLoading && <Loader />}
             <Header type={"primary"} />
-            <main>
+            <main className="main">
                 <Cover />
                 <Catalog />
                 <AboutBlock />

@@ -3,18 +3,40 @@
 .card {
   display: flex;
   flex-direction: column;
-  min-width: 280px;
-  max-width: 320px;
+  width: 280px;
   border-radius: $br-normal;
   margin-bottom: 10px;
 
-  &__image {
+  &__link {
+    color: $slate-gray;
+    cursor: pointer;
+  }
+
+  &__image-container {
+    width: 280px;
+    height: 280px;
+    background-color: $shade-grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: $br-normal;
+    overflow: hidden;
     margin-bottom: 10px;
   }
 
+  &__image {
+    width: 100%;
+    height: auto;
+  }
+
   &__title {
+    font-size: $fz-body;
     margin-bottom: 3px;
     font-weight: $fw-semi-bold;
+
+    &::first-letter {
+      text-transform: capitalize;
+    }
   }
 
   &__text {
