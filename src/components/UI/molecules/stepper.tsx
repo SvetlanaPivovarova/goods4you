@@ -3,7 +3,7 @@ import Button from "../atoms/button";
 type StepperProps = {
     currentStep: number,
     handleStep: () => void,
-    setCurrentStep: () => void,
+    setCurrentStep: (ard: number) => void,
     isDisabledButton: boolean
 }
 
