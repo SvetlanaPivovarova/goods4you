@@ -3,12 +3,12 @@ type ButtonProps = {
     color: string,
     size: string,
     name: string,
-    onClick: () => void,
+    onClick?: () => void,
     isVisible?: boolean,
-    disabled?: boolean
+    disabled?: boolean,
 }
 
-function Button({color, size = 'normal', name, onClick, isVisible, disabled}: ButtonProps) {
+function Button({color, size = 'normal', name, onClick, isVisible = true, disabled}: ButtonProps) {
     const buttonClass = isVisible ? `button button_type_${color} button_size_${size}` : `button button_type_${color} button_size_${size} button_unvisible`
     return (
         <button className={buttonClass} aria-label={name} onClick={onClick} disabled={disabled}>

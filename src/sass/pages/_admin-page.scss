@@ -44,8 +44,8 @@
     margin-bottom: 24px;
     display: flex;
 
-    &:last-of-type {
-      margin-bottom: 0;
+    &_type_last {
+      margin-bottom: 67px;
     }
   }
 
@@ -67,5 +67,48 @@
     span {
       color: $slate-gray;
     }
+  }
+
+   &__editable-container {
+     display: grid;
+     grid-template-columns: 1fr 60%;
+     align-items: center;
+     margin-bottom: 24px;
+
+     &:last-of-type {
+       margin-bottom: 48px;
+     }
+   }
+
+  &__label {
+    color: $grey-10;
+    font-weight: $fw-semi-bold;
+    display: grid;
+    grid-template-columns: 1fr 60%;
+    align-items: center;
+    margin-bottom: 24px;
+
+    &:last-of-type {
+      margin-bottom: 48px;
+    }
+  }
+
+  &__input {
+    height: 60px;
+    border: none;
+    background-color: $grey-200;
+    padding: 19px 6px;
+    border-radius: $br-normal;
+    color: $slate-gray;
+    font-weight: $fw-regular;
+
+    &_type_readonly {
+      background-color: transparent;
+      font-weight: $fw-semi-bold;
+    }
+  }
+
+  &__error {
+    margin: 20px 0;
   }
 }

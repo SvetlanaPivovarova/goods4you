@@ -2,36 +2,51 @@ import Header from "../../header";
 import {useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
 import Loader from "../atoms/loader";
-import {IProduct} from "../../../models/IProduct";
 import star from "../../../assets/star.svg"
+import Button from "../atoms/button";
 
+import EditProductForm from "../organism/edit-product-form";
+import {IProduct} from "../../../models/IProduct";
 function OneProduct() {
     const { id } = useParams();
 
     const [product, setProduct] = useState<IProduct>({})
     const [isLoading, setIsLoading] = useState(true)
+    const [error, setError] = useState('')
+    const [isEditing, setIsEditing] = useState(false)
+    const [editedProduct, setEditedProduct] = useState(product)
 
     const discountPrice = (product.price * ((100 - product.discountPercentage) / 100)).toFixed(2).slice(0, -1)
     const starRating = Array.from({ length: Math.round(product.rating) }, (_, i) => i);
 
     useEffect(() => {
+        window.scrollTo(0, 0)
+        setError('')
         fetch(`https://dummyjson.com/products/${id}`)
             .then((response) => response.json())
             .then((data) => {
                 setProduct(data);
             })
-            .catch((error) => {
-                console.error("Error fetching data:", error);
-                //setError("API connection error.");
+            .catch(() => {
+                setError("API connection error. Try later.");
             })
             .finally(() => setIsLoading(false));
     }, [id]);
+
+    useEffect(() => {
+        setProduct(editedProduct);
+    }, [editedProduct, setProduct])
+
+    function handleEdit() {
+        setIsEditing(true)
+    }
 
     return (
         <>
             <Header type={"secondary"} />
             {isLoading && <Loader />}
-            {product &&
+            {error && <p className={"error"}>{error}</p>}
+            {product && !error &&
                 <section className="container block admin-page">
                     <h2 className="block__title">Product {product.id}</h2>
                     <div className="admin-page__container">
@@ -41,13 +56,14 @@ function OneProduct() {
                             </div>
                             <ul className="gallery-products__list">
                                 {product.images && product.images.map(image =>
-                                <li className="gallery-products__list-item">
+                                <li className="gallery-products__list-item" key={image}>
                                     <img src={image} className="gallery-products__preview" alt={`preview image of product ${product.title}`} />
                                 </li>
                                 )}
                             </ul>
                         </div>
-                        <div className="description">
+                        {!isEditing &&
+                            <div className="description">
                             <div className="description__title">
                                 <h3 className="block__title block__title_type_secondary">{product.title}</h3>
                                 <p className="description__id">SKU ID <span>{String(product.id)}</span></p>
@@ -82,11 +98,28 @@ function OneProduct() {
                                 Category
                                 <span className="description__value">{product.category}</span>
                             </p>
-                            <p className="description__paragraph">
+                            <p className="description__paragraph description__paragraph_type_last">
                                 Description
                                 <span className="description__value">{product.description}</span>
                             </p>
+                            <Button color={"primary"} size={"large"} name={"Edit"} onClick={handleEdit} />
                         </div>
+                        }
+                        {isEditing &&
+                            <div className="description">
+                                <div className="description__title">
+                                    <h3 className="block__title block__title_type_secondary">{product.title}</h3>
+                                    <p className="description__id">SKU ID <span>{String(product.id)}</span></p>
+                                </div>
+                                <p className="description__paragraph">
+                                    Rating
+                                    <span className="description__rating">
+                                {starRating.map((i) => <img key={i} src={star} className="gallery-products__preview" alt={"star of the rating"}/>)}
+                            </span>
+                                </p>
+                                <EditProductForm product={product} setEditedData={setEditedProduct} setIsEditing={setIsEditing}/>
+                            </div>
+                        }
                     </div>
                 </section>
             }

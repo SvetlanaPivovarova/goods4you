@@ -16,6 +16,12 @@
 
   &_type_primary {
     background: $deep-yellow-pink;
+
+    &:disabled {
+      &:disabled {
+        background-color: $grey-10;
+      }
+    }
   }
 
   &_type_secondary {
@@ -44,6 +50,10 @@
   &_type_transparent {
     color: $slate-gray;
     background: transparent;
+  }
+
+  &_size_large {
+    width: 300px;
   }
 
   &_size_normal {
