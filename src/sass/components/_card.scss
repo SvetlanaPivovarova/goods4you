@@ -43,3 +43,12 @@
     font-size: 20px;
   }
 }
+
+.card_type_large {
+  width: 375px;
+
+  .card__image-container {
+    width: 375px;
+    height: 295px;
+  }
+}
