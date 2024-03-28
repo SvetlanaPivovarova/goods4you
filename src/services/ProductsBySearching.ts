@@ -1,11 +1,11 @@
 import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react";
-import {IProduct} from "../models/IProduct";
+import {IProductsResponse} from "../models/IProductsResponse";
 
 export const productsBySearchingAPI = createApi({
     reducerPath: 'productsBySearchingAPI',
     baseQuery: fetchBaseQuery({baseUrl: 'https://dummyjson.com'}),
     endpoints: (build) => ({
-        fetchProductsBySearching: build.query<IProduct[], string>({
+        fetchProductsBySearching: build.query<IProductsResponse, string>({
             query: (select: string) => ({
                 url: `/products/search`,
                 params: {

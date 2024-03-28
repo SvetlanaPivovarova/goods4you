@@ -19,9 +19,7 @@ function Card(props: CardProps) {
     const {product} = props
     const location = useLocation()
 
-
     const cardClassname = location.pathname === '/products' ? 'card card_type_large' : 'card'
-    console.log(cardClassname)
 
     return (
         <article className={cardClassname}>
