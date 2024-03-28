@@ -1,9 +1,9 @@
-import Header from "../../header";
-import CardsBlock from "../organism/cards-block";
-import SearchForm from "../molecules/search-form";
+import Header from "../UI/organism/header";
+import CardsBlock from "../UI/organism/cards-block";
+import SearchForm from "../UI/molecules/search-form";
 import {useEffect, useState} from "react";
-import {useAppDispatch} from "../../../hooks/redux";
-import {searchSlice} from "../../../store/reducers/SearchSlice";
+import {useAppDispatch} from "../../hooks/redux";
+import {searchSlice} from "../../store/reducers/SearchSlice";
 
 function AllProductsPage() {
     const [productSearch, setProductSearch] = useState('')

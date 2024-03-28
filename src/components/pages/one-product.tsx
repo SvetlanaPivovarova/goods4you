@@ -1,12 +1,12 @@
-import Header from "../../header";
+import Header from "../UI/organism/header";
 import {useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
-import Loader from "../atoms/loader";
-import star from "../../../assets/star.svg"
-import Button from "../atoms/button";
+import Loader from "../UI/atoms/loader";
+import Button from "../UI/atoms/button";
+import EditProductForm from "../UI/organism/edit-product-form";
+import star from "../../assets/star.svg"
+import {IProduct} from "../../models/IProduct";
 
-import EditProductForm from "../organism/edit-product-form";
-import {IProduct} from "../../../models/IProduct";
 function OneProduct() {
     const { id } = useParams();
 
