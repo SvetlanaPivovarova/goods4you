@@ -22,9 +22,8 @@ function CheckboxBlock() {
             fetch(`https://dummyjson.com/products/category/${item}`)
                 .then(res => res.json())
                 .then(res => {setProducts((state: IProduct[]) => [...state, res.products])})
-                .catch(error => {
+                .catch(() => {
                     setError('No products found in the selected categories')
-                    console.log(error)
                 })
             })
         Promise.allSettled(fetchPromises).then((results) =>
