@@ -12,6 +12,19 @@ export const allProductsAPI = createApi({
                     limit: limit
                 }
             })
+        }),
+        fetchProductsBySearching: build.query<IProductsResponse, string>({
+            query: (select: string) => ({
+                url: `/products/search`,
+                params: {
+                    q: select
+                }
+            })
+        }),
+        fetchProductsLimits: build.query<IProductsResponse, number>({
+            query: (skip: number) => ({
+                url: `/products?limit=9&skip=${skip}`,
+            })
         })
     })
 })

@@ -4,8 +4,6 @@ import searchReducer from "./reducers/SearchSlice";
 import categoryReducer from "./reducers/CategorySlice";
 import {categoriesAPI} from "../services/CategoriesService";
 import {allProductsAPI} from "../services/AllProductsService";
-import {productsBySearchingAPI} from "../services/ProductsBySearching";
-import {productsLimitsAPI} from "../services/ProductsLimitsService";
 
 
 const rootReducer = combineReducers({
@@ -13,8 +11,6 @@ const rootReducer = combineReducers({
     categoryReducer,
     [categoriesAPI.reducerPath]: categoriesAPI.reducer,
     [allProductsAPI.reducerPath]: allProductsAPI.reducer,
-    [productsBySearchingAPI.reducerPath]: productsBySearchingAPI.reducer,
-    [productsLimitsAPI.reducerPath]: productsLimitsAPI.reducer
 })
 
 export const setupStore = () => {
@@ -24,8 +20,6 @@ export const setupStore = () => {
           getDefaultMiddleware()
               .concat(categoriesAPI.middleware)
               .concat(allProductsAPI.middleware)
-              .concat(productsBySearchingAPI.middleware)
-              .concat(productsLimitsAPI.middleware)
   })
 }
 

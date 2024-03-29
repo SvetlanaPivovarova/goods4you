@@ -6,8 +6,6 @@ import Loader from "../atoms/loader";
 import {allProductsAPI} from "../../../services/AllProductsService";
 import {useAppSelector} from "../../../hooks/redux";
 import {RootState} from "../../../store/store";
-import {productsLimitsAPI} from "../../../services/ProductsLimitsService";
-import {productsBySearchingAPI} from "../../../services/ProductsBySearching";
 
 function CardsBlock() {
     const location = useLocation();
@@ -17,8 +15,8 @@ function CardsBlock() {
     const [skip, setSkip] = useState(0)
 
     const {data, isLoading, error} = allProductsAPI.useFetchAllProductsQuery(0)
-    const {data: limitedCards, isLoading: limitedLoading, error: limitedError} = productsLimitsAPI.useFetchProductsLimitsQuery(skip)
-    const {data: searchedCards, isLoading: searchedLoading, error: searchedError} = productsBySearchingAPI.useFetchProductsBySearchingQuery(search)
+    const {data: limitedCards, isLoading: limitedLoading, error: limitedError} = allProductsAPI.useFetchProductsLimitsQuery(skip)
+    const {data: searchedCards, isLoading: searchedLoading, error: searchedError} = allProductsAPI.useFetchProductsBySearchingQuery(search)
 
     const [cardsData, setCardsData] = useState(data)
     const [isLoadingCards, setIsLoadingCards] = useState(true)
