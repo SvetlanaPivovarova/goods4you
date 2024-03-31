@@ -7,6 +7,11 @@ const data = ['category1', 'category2'];
 describe('List component', () => {
     test('Checkbox list renders', () => {
         render(<CheckboxList items={data} />)
+        expect(screen.getByRole('list')).toBeInTheDocument()
         expect(screen.getByText('category1')).toBeInTheDocument()
     });
+    test('Checkbox list renders without data', () => {
+        render(<CheckboxList />)
+        expect(screen.queryByRole('list')).toBeInTheDocument();
+    })
 })

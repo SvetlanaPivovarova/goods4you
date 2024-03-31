@@ -1,7 +1,7 @@
 import CheckboxList from "../molecules/checkbox-list";
 import Stepper from "../molecules/stepper";
 import {categoriesAPI} from "../../../services/CategoriesService";
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import Card from "../molecules/card";
 import Loader from "../atoms/loader";
 import {IProduct} from "../../../models/IProduct";
@@ -69,7 +69,7 @@ function CheckboxBlock() {
     return (
         <section className="checkbox-block container block">
             {currentStep === 1 &&
-                <>
+                <React.Fragment>
                     <div className="block__container-with-dash">
                         <h2 className="title block__title">We will select the perfect product for you</h2>
                         <p className="subtitle subtitle_type_grey">Answer three questions and we will send you a catalog with the most suitable products for you.</p>
@@ -86,10 +86,10 @@ function CheckboxBlock() {
                         setCurrentStep={setCurrentStep}
                         isDisabledButton={disabled}
                     />
-                </>
+                </React.Fragment>
                 }
             {currentStep === 2 &&
-                <>
+                <React.Fragment>
                     <div className="block__container-with-dash">
                         <h2 className="title block__title">Your selection is ready!</h2>
                     </div>
@@ -109,7 +109,7 @@ function CheckboxBlock() {
                         setCurrentStep={setCurrentStep}
                         isDisabledButton={false}
                     />
-                </>
+                </React.Fragment>
                 }
 
         </section>

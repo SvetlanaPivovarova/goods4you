@@ -3,14 +3,14 @@ import {useState} from "react";
 
 interface CheckboxListProps {
     items: string[],
-    setList: () => void
+    setList: (array: string[]) => void
 }
 
 function CheckboxList(props: CheckboxListProps) {
     const { items, setList } = props
 
     const [checkedState, setCheckedState] = useState(
-        new Array(items.length).fill(false)
+        items ? new Array(items.length).fill(false) : null
     );
 
     const handleOnChange = (position: number) => {
@@ -35,7 +35,7 @@ function CheckboxList(props: CheckboxListProps) {
         setList(list)
     };
 
-    const listItems = items.map((item, index: number) =>
+    const listItems = items && items.map((item, index: number) =>
         <li key={index}>
             <label className="checkbox-default">
                 {item}
