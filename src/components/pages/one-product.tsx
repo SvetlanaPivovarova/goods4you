@@ -25,7 +25,9 @@ function OneProduct() {
         fetch(`https://dummyjson.com/products/${id}`)
             .then((response) => response.json())
             .then((data) => {
-                setProduct(data);
+                if(data.message) {
+                    setError(data.message)
+                } else setProduct(data);
             })
             .catch(() => {
                 setError("API connection error. Try later.");
