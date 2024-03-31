@@ -1,7 +1,7 @@
 //import Checkbox from "../atoms/checkbox";
 import {useState} from "react";
 
-type CheckboxListProps = {
+interface CheckboxListProps {
     items: string[],
     setList: () => void
 }
