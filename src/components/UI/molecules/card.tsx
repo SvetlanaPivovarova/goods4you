@@ -1,9 +1,17 @@
+import { Link } from "react-router-dom";
+
 type CardProps = {
     product: {
-        imageSrc: string,
-        name: string,
-        typeOfProduct: string,
-        price: string,
+        id: string | number,
+        title: string,
+        price: number,
+        discountPercentage: number,
+        rating: number,
+        stock: number,
+        brand: string,
+        category: string,
+        thumbnail: string,
+        images: string[]
     },
 }
 
@@ -12,9 +20,12 @@ function Card(props: CardProps) {
 
     return (
         <article className="card">
-            <img src={product.imageSrc} className="card__image" alt={`Photo of the product ${product.typeOfProduct}`} />
-            <h4 className="card__title">{product.name}</h4>
-            <p className="card__text">{product.price}</p>
+            <Link to={`/products/${product.id}`} key={product.id}>
+                <img src={product.thumbnail} className="card__image" alt={`Photo of the product ${product.title}`} />
+                <h4 className="card__title">{product.title}</h4>
+                <p className="card__text">{product.price}$</p>
+            </Link>
+
         </article>
     )
 }
