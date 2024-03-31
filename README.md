@@ -13,6 +13,10 @@
 
 Запускает приложение в режиме разработки.\
 
+#### `npm run test`
+
+Запускает unit-тестирование приложения.\
+
 #### `npm run build`
 
 Builds the app for production to the `build` folder.\
