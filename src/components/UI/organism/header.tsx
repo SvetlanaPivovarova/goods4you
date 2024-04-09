@@ -1,9 +1,17 @@
-import logo from "../assets/logo.svg";
+import logo from "../../../assets/logo.svg"
+import { Link } from "react-router-dom";
 
-function Footer() {
+type HeaderProps = {
+    type: string
+}
+
+function Header(props: HeaderProps) {
+    const {type} = props
+    const headerClass = (type == "primary") ? "header header_type_primary" : "header header_type_secondary"
+
     return (
-        <footer className="footer">
-            <div className="container">
+        <header className={headerClass}>
+            <div className="container header__container">
                 <img src={logo} className="logo" alt="logo of store Goods4you" />
                 <nav>
                     <ul className="menu menu_type_primary">
@@ -32,11 +40,21 @@ function Footer() {
                                 FAQ
                             </a>
                         </li>
+                        <li className="menu__link">
+                            <Link className="menu__link-item" to={"/products"}>
+                                For staff
+                            </Link>
+                        </li>
+                    </ul>
+                    <ul className="menu menu_type_secondary">
+                        <li className="menu__link">
+                            <Link className="menu__link-item" to="/">Back to site</Link>
+                        </li>
                     </ul>
                 </nav>
             </div>
-        </footer>
+        </header>
     )
 }
 
-export default Footer
+export default Header

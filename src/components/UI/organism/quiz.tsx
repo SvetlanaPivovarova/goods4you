@@ -1,4 +1,4 @@
-import CheckboxBlock from "./UI/organism/checkbox-block";
+import CheckboxBlock from "./checkbox-block";
 
 function Quiz() {
     return (
@@ -7,5 +7,4 @@ function Quiz() {
         </section>
     )
 }
-
 export default Quiz

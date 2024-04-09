@@ -1,14 +1,18 @@
 import Button from "../atoms/button";
-import {useState} from "react";
+import React, {useState} from "react";
 
-function SearchForm({setProductSearch}) {
+type SearchForm = {
+    setProductSearch: (search: string) => void
+}
+
+function SearchForm({setProductSearch}: SearchForm) {
     const [search, setSearch] = useState('')
-    function handleSearch(event) {
+    function handleSearch(event:  React.SyntheticEvent) {
         event.preventDefault();
         setProductSearch(search)
     }
 
-    function handleChange(event) {
+    function handleChange(event:  React.SyntheticEvent) {
         setSearch(event.target.value.trim())
     }
 

@@ -1,8 +1,5 @@
 import { Link } from 'react-router-dom';
 
-//import styles from './not-found.module.css';
-//import pageNotFound from "../images/404.svg";
-
 function NotFoundPage() {
     return (
         <div className="not-found">

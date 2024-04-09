@@ -1,8 +1,8 @@
 import { Routes, Route } from 'react-router-dom';
-import MainPage from "./components/UI/pages/main-page";
-import AllProducts from "./components/UI/pages/all-products";
-import OneProduct from "./components/UI/pages/one-product";
-import NotFoundPage from "./components/UI/pages/not-found";
+import MainPage from "./components/pages/main-page";
+import AllProducts from "./components/pages/all-products";
+import OneProduct from "./components/pages/one-product";
+import NotFoundPage from "./components/pages/not-found";
 
 function App() {
   return (

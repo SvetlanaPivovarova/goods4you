@@ -5,9 +5,20 @@
   flex-direction: column;
   width: 520px;
 
+  &__main-image-container {
+    background-color: $shade-grey;
+    border-radius: $br-normal;
+    overflow: hidden;
+    height: 460px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
   &__main-image {
     width: 100%;
-    margin-bottom: 20px;
+
   }
 
   &__list {
@@ -17,8 +28,13 @@
 
   &__list-item {
     width: 70px;
+    height: 75px;
+    background-color: $shade-grey;
     margin-right: 20px;
     border-radius: $br-normal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     &:last-of-type {
       margin-right: 0;
@@ -27,5 +43,9 @@
     &:hover {
       border: 1px solid $grey-10;
     }
+  }
+
+  &__preview {
+    width: 100%;
   }
 }

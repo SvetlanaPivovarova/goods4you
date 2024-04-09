@@ -16,6 +16,12 @@
 
   &_type_primary {
     background: $deep-yellow-pink;
+
+    &:disabled {
+      &:disabled {
+        background-color: $grey-10;
+      }
+    }
   }
 
   &_type_secondary {
@@ -30,11 +36,24 @@
     color: $slate-gray;
     background: transparent;
     border: 1px solid $slate-gray;
+
+    &:hover {
+      border-color: $pale-sand;
+    }
+
+    &:disabled {
+      color: $grey-10;
+      border-color: $grey-10;
+    }
   }
 
   &_type_transparent {
     color: $slate-gray;
     background: transparent;
+  }
+
+  &_size_large {
+    width: 300px;
   }
 
   &_size_normal {

@@ -1,4 +1,4 @@
-import Button from "./UI/atoms/button";
+import Button from "../atoms/button";
 
 function Cover() {
     return (

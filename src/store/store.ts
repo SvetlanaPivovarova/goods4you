@@ -2,23 +2,15 @@ import {combineReducers} from "redux";
 import {configureStore} from "@reduxjs/toolkit";
 import searchReducer from "./reducers/SearchSlice";
 import categoryReducer from "./reducers/CategorySlice";
-import {postAPI} from "../services/PostService";
 import {categoriesAPI} from "../services/CategoriesService";
 import {allProductsAPI} from "../services/AllProductsService";
-import {productsByCategoryAPI} from "../services/ProductsByCategoryService";
-import {productsBySearchingAPI} from "../services/ProductsBySearching";
-import {productsLimitsAPI} from "../services/ProductsLimitsService";
 
 
 const rootReducer = combineReducers({
     searchReducer,
     categoryReducer,
-    [postAPI.reducerPath]: postAPI.reducer,
     [categoriesAPI.reducerPath]: categoriesAPI.reducer,
     [allProductsAPI.reducerPath]: allProductsAPI.reducer,
-    [productsByCategoryAPI.reducerPath]: productsByCategoryAPI.reducer,
-    [productsBySearchingAPI.reducerPath]: productsBySearchingAPI.reducer,
-    [productsLimitsAPI.reducerPath]: productsLimitsAPI.reducer
 })
 
 export const setupStore = () => {
@@ -26,12 +18,8 @@ export const setupStore = () => {
       reducer: rootReducer,
       middleware: (getDefaultMiddleware) =>
           getDefaultMiddleware()
-              .concat(postAPI.middleware)
               .concat(categoriesAPI.middleware)
               .concat(allProductsAPI.middleware)
-              .concat(productsByCategoryAPI.middleware)
-              .concat(productsBySearchingAPI.middleware)
-              .concat(productsLimitsAPI.middleware)
   })
 }
 

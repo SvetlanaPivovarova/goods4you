@@ -1,4 +1,4 @@
-import Accordion from "./UI/organism/accordion";
+import Accordion from "./accordion";
 
 function FAQ() {
    return (

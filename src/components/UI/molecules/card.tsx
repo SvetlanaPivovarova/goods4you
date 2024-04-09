@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import {Link, useLocation} from "react-router-dom";
 
 type CardProps = {
     product: {
@@ -17,11 +17,16 @@ type CardProps = {
 
 function Card(props: CardProps) {
     const {product} = props
+    const location = useLocation()
+
+    const cardClassname = location.pathname === '/products' ? 'card card_type_large' : 'card'
 
     return (
-        <article className="card">
-            <Link to={`/products/${product.id}`} key={product.id}>
-                <img src={product.thumbnail} className="card__image" alt={`Photo of the product ${product.title}`} />
+        <article className={cardClassname}>
+            <Link className="card__link" to={`/products/${product.id}`} key={product.id}>
+                <div className="card__image-container">
+                    <img src={product.thumbnail} className="card__image" alt={`Photo of the product ${product.title}`} />
+                </div>
                 <h4 className="card__title">{product.title}</h4>
                 <p className="card__text">{product.price}$</p>
             </Link>
